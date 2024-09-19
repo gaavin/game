@@ -1,14 +1,22 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { $, component$, useSignal } from "@builder.io/qwik";
+import { type DocumentHead } from "@builder.io/qwik-city";
+import { invoke } from "@tauri-apps/api/tauri";
 
 export default component$(() => {
+  const message = useSignal("");
+  const gnomed = $(async () => {
+    message.value = await invoke("greet", { name: "World" });
+  });
+
   return (
     <>
-      <h1>Hi 👋</h1>
+      <h1>I am gnot a gnelf</h1>
       <div>
-        Can't wait to see what you build with qwik!
+        I am gnot a gnoblin
         <br />
-        Happy coding.
+        <button onClick$={gnomed}>hello</button>
+        <br />
+        <h2>{message.value}</h2>
       </div>
     </>
   );

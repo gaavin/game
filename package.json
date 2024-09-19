@@ -1,6 +1,6 @@
 {
-  "name": "my-qwik-empty-starter",
-  "description": "Blank project with routing included",
+  "name": "game-frontend",
+  "description": "frontend of game",
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
@@ -15,6 +15,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/static/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
@@ -29,16 +30,18 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.9.0",
     "@builder.io/qwik-city": "^1.9.0",
-    "@types/eslint": "8.56.10",
-    "@types/node": "20.14.11",
-    "@typescript-eslint/eslint-plugin": "7.16.1",
-    "@typescript-eslint/parser": "7.16.1",
-    "eslint": "8.57.0",
+    "@tauri-apps/api": "^1.6.0",
+    "@tauri-apps/cli": "^1.6.2",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.5.5",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-qwik": "^1.9.0",
-    "prettier": "3.3.3",
+    "prettier": "^3.3.3",
     "typescript": "5.4.5",
-    "undici": "*",
-    "vite": "5.3.5",
-    "vite-tsconfig-paths": "^4.2.1"
+    "undici": "^6.19.8",
+    "vite": "^5.4.6",
+    "vite-tsconfig-paths": "^5.0.1"
   }
 }
